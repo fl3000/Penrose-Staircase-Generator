@@ -148,8 +148,8 @@ def PStairs_to_n(n):
 
 #calculate and write 1st pstair to nth pstair to CSV-file
 def PStairs_to_n_CSV(n):
-    f = open('pstairs_py_1to10000.csv', 'w', encoding='UTF8', newline='')
-    writer = csv.writer(f,delimiter=';')
+    f = open('pstairs.csv', 'w', encoding='UTF8', newline='')
+    writer = csv.writer(f,delimiter=',')
     for i in range(1,n+1):
         a=A_of_NP(i)
         b=B_of_NP(i)
@@ -158,7 +158,8 @@ def PStairs_to_n_CSV(n):
         g=SNP(i)
         l=LONP(i)
         #print(a,b,c,d,g,l)
-        data = [a,b,c,d,g,str(l).replace('.', ",")]
+        #data = [a,b,c,d,g,str(l).replace('.', ",")]
+        data = [a,b,c,d,g,l]
         writer.writerow(data)
     f.close()
 
