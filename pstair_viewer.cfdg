@@ -20,7 +20,8 @@ COLOR3 = [b 1 sat 0.2 h 200]
 // R = 15,2,5,12,3          // Castle of the Wizards
 // R = 17,17,10,24,9.14285  // Large Antique Arena
 // R = 100,66,67,99,9.93939 // Chinese Wall
-// For more ratios visit https://www.ferdinandlehr.de
+// For more ratios read the CSV-File(s) at GitHub:
+// https://github.com/fl3000/Penrose-Staircase-Generator
 //-----------------------------------------------------//
 U = 1
 H = 0.866025404
