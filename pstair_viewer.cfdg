@@ -1,14 +1,14 @@
-//-----------------------------------------------------//
-// THE INFINITY-STAIRCASE VIEWER (CFDG)                //
-// (c) and written 2022 by F. Lehr                     //
-// For more info visit https://www.ferdinandlehr.de    //
-// github.com                                          //
-// https://www.contextfreeart.org                      //
-// This code is Creative Commons licensed:             //
-// Creative Commons Attribution-NonCommercial-         //
-// ShareAlike 4.0 International:                       //
-// https://creativecommons.org/licenses/by-nc-sa/4.0/  //
-//-----------------------------------------------------//
+//-------------------------------------------------------//
+// THE INFINITY-STAIRCASE VIEWER (CFDG)                  //
+// (c) and written 2022 by F. Lehr                       //
+// For more info visit https://www.ferdinandlehr.de      //
+// https://github.com/fl3000/Penrose-Staircase-Generator //
+// https://www.contextfreeart.org                        //
+// This code is Creative Commons licensed:               //
+// Creative Commons Attribution-NonCommercial-           //
+// ShareAlike 4.0 International:                         //
+// https://creativecommons.org/licenses/by-nc-sa/4.0/    //
+//-------------------------------------------------------//
 CF::Impure=1
 //----------------- PLAYAROUND-AREA -------------------//
 COLOR1 = [b 0.007 sat 0.5 h 0]
