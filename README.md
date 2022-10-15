@@ -1,9 +1,11 @@
 # Penrose-Staircase-Generator
-2022 by F. Lehr
 
-pstair_generator.py
-Generates the n-th Penrose-Staircase:
 
-pstair_viewer.cfdg
-Displays the Staircase on the screen with "Context-Free-Art", a free Software for visualizing geometric objects with a context-free grammar.
 
+
+
+pstair_generator.py - The python-script that calculates the n-th Penrose-Staircase ratio.
+
+pstair_viewer.cfdg - The code for displaying the Staircase on screen with "Context-Free-Art", a free Software for visualizing geometric objects with a context-free grammar.
+
+Written 2022 by F. Lehr
