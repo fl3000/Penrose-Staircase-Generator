@@ -2,6 +2,7 @@
 # The Penrose-Staircase-Module v1.0 for PYTHON                    #
 # (c) 2022 F. Lehr                                                #
 # https://www.ferdinandlehr.de                                    #
+# https://github.com/fl3000/Penrose-Staircase-Generator           #
 #                                                                 #
 # usage of this module:                                           #
 #                                                                 #
