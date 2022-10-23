@@ -1,10 +1,14 @@
 # Penrose-Staircase-Generator
 
-The Penrose-Staircase-Generator can calculate the ratio of the n-th "Impossible-Staircase". Together with the CFDG-Viewer, the staircase can then be displayed on the computer screen.
+The Penrose-Staircase-Generator can calculate the ratio of the n-th "Impossible-Staircase" and display its image on the computer-screen.
 
-**pstair_generator.py** - The Python-script that calculates the n-th Penrose-Staircase ratio.
+**pstairs.py** - The python-module that contains the PenroseStaircase-class.
 
-**pstair_viewer.cfdg** - The code for displaying the Staircase on screen with "Context-Free-Art", a free software for visualizing geometric objects with a context-free grammar. See https://www.contextfreeart.org
+**vpstairs.py** - The viewer for displaying the n-th Penrose-Staircase on screen. 
+                  (Requires the module pstairs.py in the same folder.)
+                  Usage: python vpstairs.py -n <the n-th Penrose-Staircase>
+
+**pstair_viewer.cfdg** - For hires screen-display with "Context-Free-Art", a free software for visualizing geometric objects with a context-free grammar. See https://www.contextfreeart.org
 
 Written 2022 by F. Lehr
 
