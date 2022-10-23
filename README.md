@@ -2,13 +2,13 @@
 
 The Penrose-Staircase-Generator calculates the n-th Impossible-Staircase and displays its image on the computer-screen.
 
-**pstairs.py** - The python-module that contains the PenroseStaircase-class.
+**PSTAIRS.PY** - The python-module that contains the PenroseStaircase-class.
 
-**vpstairs.py** - The viewer for displaying the n-th Penrose-Staircase on screen.<br>
+**VPSTAIRS.PY** - The viewer for displaying the n-th Penrose-Staircase on screen.<br>
                   (Requires the module pstairs.py in the same folder.)<br>
                   Usage: python vpstairs.py -n <the n-th Penrose-Staircase>
 
-**pstair_viewer.cfdg** - For hires screen-display with "Context-Free-Art", a free software for visualizing geometric objects with a context-free grammar. See https://www.contextfreeart.org
+**PSTAIR_VIEWER.CFDG** - For hires screen-display with "Context-Free-Art", a free software for visualizing geometric objects with a context-free grammar. See https://www.contextfreeart.org
 
 Written 2022 by F. Lehr
   
