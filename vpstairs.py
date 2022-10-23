@@ -220,8 +220,8 @@ YH = 0
 XO = 0 #final x-offset
 YO = 0 #final y-offset
 
-#win = GraphWin("Penrose-Stair Generator v2.0", (D+C)*L*zm, yheight+WH*zm)
-win = GraphWin("Penrose-Stair Generator v2.0", 500,400)
+#win = GraphWin("Penrose-Staircase Generator v1.0", (D+C)*L*zm, yheight+WH*zm)
+win = GraphWin("Penrose-Staircase Generator v1.0", 500,400)
 
 def main():
     #print ('Number of arguments:', len(sys.argv), 'arguments.')
