@@ -2,8 +2,9 @@
 # The Penrose-Staircase-Viewer v1.0 for PYTHON                    #
 # (c) 2022 F. Lehr                                                #
 # https://www.ferdinandlehr.de                                    #
+# https://github.com/fl3000/Penrose-Staircase-Generator           #
 #                                                                 #
-# usage: python vpstairs.py -n <the n-th Penrose-Staircase>                 #
+# usage: python vpstairs.py -n <the n-th Penrose-Staircase>       #
 #-----------------------------------------------------------------#
 
 import sys
