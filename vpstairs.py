@@ -78,7 +78,7 @@ def drawStepsC(x,y,len):
     for k in range(1,C,1):
         xx1 = ((U*0.5*L)*(A-1)+(U/2)*(A-1)+(L*1+U/2)*(B-1))
         yy1 = (((H*L)-H)*(A-1)-(B-1)*H)
-        S(L,x+(xx1-L*U*0.5*k+(U/2)*k),y+(yy1-k*H*(L+1)))
+        S(L,x+(xx1-L*U*0.5*k+(U/2)*k),y+(yy1-k*H*(L+1))) # z (A+B+C+D+2)]
 
 def drawStepsD(x,y,len):
     for m in range(D-1,0,-1):
@@ -86,7 +86,7 @@ def drawStepsD(x,y,len):
         yy1 = (((H*L)-H)*(A-1)-(B-1)*H)
         xxx1 = (xx1-L*U*0.5*(C-1)+(U/2)*(C-1))
         yyy1 = (yy1-(C-1)*H*(L+1))
-        S(len,x+(xxx1-L*U*m+(U/2)*m),y+(yyy1-H*m))
+        S(len,x+(xxx1-L*U*m+(U/2)*m),y+(yyy1-H*m)) # z (-m+A+B+C+D+1)]
 
 def stair_rect_D(x,y):
     PLIST.clear()
@@ -216,11 +216,12 @@ L = 0
 WH = 0
 ZM = 0
 PLIST=[]
+XH = 0
 YH = 0
 XO = 0 #final x-offset
 YO = 0 #final y-offset
 
-win = GraphWin("Penrose-Staircase Generator v1.0", 500,400)
+win = 0
 
 def main():
     #print ('Number of arguments:', len(sys.argv), 'arguments.')
@@ -238,7 +239,7 @@ def main():
         print ("usage: python vpstairs.py -n <the n-th Penrose-Staircase>")
         sys.exit(1)
     
-    global A,B,C,D,L,WH,ZM,PLIST,YH,XO,YO
+    global A,B,C,D,L,WH,ZM,PLIST,XH,YH,XO,YO,win
     A=PS.a
     B=PS.b
     C=PS.c
@@ -247,9 +248,11 @@ def main():
     WH = D*2
     ZM = 11/((A+B+C+D+L-4)*0.1)
     PLIST=[]
-    YH = (A*H*L)*ZM
+    XH = (A*L+B*L)*ZM
+    YH = (A*H*L+B*H*L)*ZM
     XO = 10 #final x-offset
     YO = (A*L*H*0.5)*ZM #final y-offset
+    win = GraphWin("Penrose-Staircase Generator v1.0", XH,YH)
     drawStaircase(0,0,L)
 
     try:
