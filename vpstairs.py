@@ -220,7 +220,6 @@ YH = 0
 XO = 0 #final x-offset
 YO = 0 #final y-offset
 
-#win = GraphWin("Penrose-Staircase Generator v1.0", (D+C)*L*zm, yheight+WH*zm)
 win = GraphWin("Penrose-Staircase Generator v1.0", 500,400)
 
 def main():
@@ -229,7 +228,16 @@ def main():
     #print ('Argument 1:', str(sys.argv[1]))
     global YH
     global PS
-    PS = pstairs.PenroseStaircase(int(sys.argv[1])) # calc the nth-PStair
+    
+    
+    
+    try:
+        PS = pstairs.PenroseStaircase(int(sys.argv[1])) # calc the nth-PStair
+    except IndexError:
+        print ("Error: You did not specify n.")
+        print ("usage: python vpstairs.py -n <the n-th Penrose-Staircase>")
+        sys.exit(1)
+    
     global A,B,C,D,L,WH,ZM,PLIST,YH,XO,YO
     A=PS.a
     B=PS.b
@@ -244,7 +252,11 @@ def main():
     YO = (A*L*H*0.5)*ZM #final y-offset
     drawStaircase(0,0,L)
 
-    win.getMouse() # Pause to view result
+    try:
+        win.getMouse() # Pause to view result
+    except GraphicsError:
+        pass
+    
     win.close()    # Close window when done
 
 main()
