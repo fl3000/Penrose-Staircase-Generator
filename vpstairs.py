@@ -252,6 +252,7 @@ def main():
     YH = (A*H*L+B*H*L)*ZM
     XO = 10 #final x-offset
     YO = (A*L*H*0.5)*ZM #final y-offset
+    print("The Penrose-Staircase Nr.", int(sys.argv[1]), " is: ", A, B, C, D, "(", L, ")")
     win = GraphWin("Penrose-Staircase Generator v1.0", XH,YH)
     drawStaircase(0,0,L)
 
