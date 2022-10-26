@@ -255,6 +255,11 @@ def main():
     print("The Penrose-Staircase Nr.", int(sys.argv[1]), " is: ", A, B, C, D, "(", L, ")")
     win = GraphWin("Penrose-Staircase Generator v1.0", XH,YH)
     drawStaircase(0,0,L)
+    str = "n=",int(sys.argv[1]),"ratio:", A, B, C, D, "(",L,")"
+    message = Text(Point(XH/2,5), str)
+    message.setFace("courier")
+    message.setSize(10)
+    message.draw(win)
 
     try:
         win.getMouse() # Pause to view result
