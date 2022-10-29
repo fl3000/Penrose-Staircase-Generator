@@ -148,7 +148,7 @@ def mid_wall2(x,y):
 
     LINEREL(-L*0.5*U,-H*L)
     LINEREL(U*WH*0.5,-H*WH)
-    LINEREL(-U*0.5*L*(C-2),-H*L*(C-2))
+    LINEREL(-U*0.5*L*(C-1),-H*L*(C-1))
     global color3
     CLOSEPOLY(color3)
 
