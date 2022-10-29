@@ -129,7 +129,7 @@ path mid_wall2 {
     }
     LINEREL(-L*0.5*U,-H*L)
     LINEREL(U*WH*0.5,-H*WH)
-    LINEREL(-U*0.5*L*(C-2),-H*L*(C-2))
+    LINEREL(-U*0.5*L*(C-1),-H*L*(C-1))
     CLOSEPOLY()
     FILL()[trans COLOR2]
     STROKE(0.1, CF::RoundJoin)[]
