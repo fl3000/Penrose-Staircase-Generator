@@ -1,6 +1,6 @@
 # Penrose-Staircase-Generator
 
-The Penrose-Staircase-Generator calculates the n-th Impossible-Staircase and displays its image on the computer-screen. For browser-based livedemo visit https://ferdinandlehr.de/mathematik/penrose-staircase-calculator/
+The Penrose-Staircase-Generator calculates the n-th Impossible-Staircase and displays its image on the computer-screen.<br>For browser-based livedemo visit https://ferdinandlehr.de/mathematik/penrose-staircase-calculator/
 
 **PSTAIRS.PY** - The python-module that contains the PenroseStaircase-class.
 
