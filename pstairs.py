@@ -6,7 +6,7 @@
 #                                                                 #
 # usage of this module:                                           #
 #                                                                 #
-#        import pstairs.py                                        #
+#        import pstairs                                           #
 #        p = PenroseStaircase(n) # n: n-th Penrose-Staircase      #
 #        A = p.a                                                  #
 #        B = p.b                                                  #
