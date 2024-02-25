@@ -1,6 +1,6 @@
 #-----------------------------------------------------------------#
-# The Penrose-Staircase-Module v1.0 for PYTHON                    #
-# (c) 2022 F. Lehr  ferdinand@ferdinandlehr.de                    #
+# The Penrose-Staircase-Module v1.1 for PYTHON                    #
+# (c) 2022, 2024, F. Lehr  ferdinand@ferdinandlehr.de             #
 # https://www.ferdinandlehr.de                                    #
 # https://github.com/fl3000/Penrose-Staircase-Generator           #
 #                                                                 #
@@ -134,15 +134,97 @@ class PenroseStaircase:
         c=self.C_of_NP(n)
         return a+b-c
 
-    #calculate and print the nth pstair
-    def PStair_nth(self, n):
+    #calcs a of the nth pstair (directly by formula)
+    def DIRECT_A(self, n):
+      if (n==1):
+          a = 3
+      elif (n>1):
+          a = math.floor(1/6*math.sqrt(72*n - 63 -  \
+             (12*math.floor(6**(1/3)*(n - 1)**(1/3) \
+             + 1/18*6**(2/3)/(n - 1)**(1/3)) - 12)* \
+             math.floor(6**(1/3)*(n - 1)**(1/3) +   \
+             1/18*6**(2/3)/(n - 1)**(1/3))*(math.floor( \
+             6**(1/3)*(n - 1)**(1/3) + 1/18*6**(2/3)/(n - \
+             1)**(1/3)) + 1)) + 1/2) + 2
+
+      return a
+    
+    #calcs b of the nth pstair (directly by formula)
+    def DIRECT_B(self, n):
+      if (n==1):
+          b = 2
+      elif (n>1):
+          b = math.floor(6**(1/3)*(n - 1)**(1/3) + 1/18*6**(2/3)/(n - \
+          1)**(1/3)) + 2 - math.floor(1/6*math.sqrt(72*n - 63 - \
+          (12*math.floor(6**(1/3)*(n - 1)**(1/3) + 1/18*6**(2/3)/(n - \
+          1)**(1/3)) - 12)*math.floor(6**(1/3)*(n - 1)**(1/3) + \
+          1/18*6**(2/3)/(n - 1)**(1/3))*(math.floor(6**(1/3)*(n - \
+          1)**(1/3) + 1/18*6**(2/3)/(n - 1)**(1/3)) + 1)) + 1/2)
+
+      return b
+
+    #calcs c of the nth pstair (directly by formula)
+    def DIRECT_C(self, n):
+      if (n==1):
+          c = 2
+      elif (n>1):
+          c = n + 1 - 1/6*(math.floor(6**(1/3)*(n - 1)**(1/3) + \
+          1/18*6**(2/3)/(n - 1)**(1/3)) - 1)*math.floor(6**(1/3)*(n - \
+          1)**(1/3) + 1/18*6**(2/3)/(n - 1)**(1/3))*(math.floor(6**( \
+          1/3)*(n - 1)**(1/3) + 1/18*6**(2/3)/(n - 1)**(1/3)) + 1) - \
+          1/2*(math.floor(1/6*math.sqrt(72*n - 63 - (12*math.floor(6**( \
+          1/3)*(n - 1)**(1/3) + 1/18*6**(2/3)/(n - 1)**(1/3)) - 12)* \
+          math.floor(6**(1/3)*(n - 1)**(1/3) + 1/18*6**(2/3)/(n - \
+          1)**(1/3))*(math.floor(6**(1/3)*(n - 1)**(1/3) + 1/18*6**( \
+          2/3)/(n - 1)**(1/3)) + 1)) + 1/2) - 1)*math.floor(1/6* \
+          math.sqrt(72*n - 63 - (12*math.floor(6**(1/3)*(n - 1)**(1/3) \
+          + 1/18*6**(2/3)/(n - 1)**(1/3)) - 12)*math.floor(6**(1/3)*(n - \
+          1)**(1/3) + 1/18*6**(2/3)/(n - 1)**(1/3))*(math.floor(\
+          6**(1/3)*(n - 1)**(1/3) + 1/18*6**(2/3)/(n - 1)**(1/3)) + 1)) + 1/2)
+
+      return c
+
+    #calcs d of the nth pstair (directly by formula)
+    def DIRECT_D(self, n):
+      a=self.DIRECT_A(n)
+      b=self.DIRECT_B(n)
+      c=self.DIRECT_C(n)
+      return a+b-c
+
+    #calcs a of the nth pstair (directly by formula)
+    def DIRECT_G(self, n):
+      if (n==1):
+          g = 6
+      elif (n>1):
+          g = 4 + 2*math.floor(6**(1/3)*(n - 1)**(1/3) + \
+              1/18*6**(2/3)/(n - 1)**(1/3))
+
+      return g
+    
+    #calcs len of the nth pstair (directly by formula)
+    def DIRECT_L(self, n):
+      return self.DIRECT_G(n)/((self.DIRECT_A(n)/2) - \
+             (self.DIRECT_B(n)/2)-(self.DIRECT_C(n)/2)+(self.DIRECT_D(n)/2))
+
+    #calculate and print the nth pstair (v1.0)
+    def PStair_nth_v10(self, n):
         self.a=self.A_of_NP(n)
         self.b=self.B_of_NP(n)
         self.c=self.C_of_NP(n)
         self.d=self.a+self.b-self.c
         self.g=self.SNP(n)
         self.l=self.LONP(n)
-
+        
+    #calculate and print the nth pstair (v1.1)
+    def PStair_nth(self, n):
+      a=self.DIRECT_A(n)
+      b=self.DIRECT_B(n)
+      c=self.DIRECT_C(n)
+      d=a+b-c
+      g=self.DIRECT_G(n)
+      l= g / ((a/2)-(b/2)-(c/2)+(d/2))
+      print(n,",",a,",",b,",",int(c),",",int(d),",",g,",",l)
+    
     def __init__(self, n):
         self.valid=False
         if (isinstance(n, int)==True and n>0):
