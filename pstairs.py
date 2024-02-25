@@ -4,16 +4,20 @@
 # https://www.ferdinandlehr.de                                    #
 # https://github.com/fl3000/Penrose-Staircase-Generator           #
 #                                                                 #
+# Module for calculating the n-th Penrose-Staircase.              #
+#                                                                 #
 # usage of this module:                                           #
 #                                                                 #
 #        import pstairs                                           #
-#        p = PenroseStaircase(n) # n: n-th Penrose-Staircase      #
+#        p = pstairs.PenroseStaircase(n)                          #
 #        A = p.a                                                  #
 #        B = p.b                                                  #
 #        C = p.c                                                  #
 #        D = p.d                                                  #
 #        L = p.l                                                  #
 #-----------------------------------------------------------------#
+
+import math
 
 class PenroseStaircase:
     #Calculates the number of staircases for a given (always even) stairsum.
