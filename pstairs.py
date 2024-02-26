@@ -1,5 +1,5 @@
 #-----------------------------------------------------------------#
-# The Penrose-Staircase-Module v1.1 for PYTHON                    #
+# The Penrose-Staircase-Module v1.2 for PYTHON                    #
 # (c) 2022, 2024, F. Lehr  ferdinand@ferdinandlehr.de             #
 # https://www.ferdinandlehr.de                                    #
 # https://github.com/fl3000/Penrose-Staircase-Generator           #
@@ -141,9 +141,9 @@ class PenroseStaircase:
     #calcs a of the nth pstair (directly by formula)
     def DIRECT_A(self, n):
       if (n==1):
-          a = 3
+          self.a = 3
       elif (n>1):
-          a = math.floor(1/6*math.sqrt(72*n - 63 -  \
+          self.a = math.floor(1/6*math.sqrt(72*n - 63 -  \
              (12*math.floor(6**(1/3)*(n - 1)**(1/3) \
              + 1/18*6**(2/3)/(n - 1)**(1/3)) - 12)* \
              math.floor(6**(1/3)*(n - 1)**(1/3) +   \
@@ -151,28 +151,28 @@ class PenroseStaircase:
              6**(1/3)*(n - 1)**(1/3) + 1/18*6**(2/3)/(n - \
              1)**(1/3)) + 1)) + 1/2) + 2
 
-      return a
+      return self.a
     
     #calcs b of the nth pstair (directly by formula)
     def DIRECT_B(self, n):
       if (n==1):
-          b = 2
+          self.b = 2
       elif (n>1):
-          b = math.floor(6**(1/3)*(n - 1)**(1/3) + 1/18*6**(2/3)/(n - \
+          self.b = math.floor(6**(1/3)*(n - 1)**(1/3) + 1/18*6**(2/3)/(n - \
           1)**(1/3)) + 2 - math.floor(1/6*math.sqrt(72*n - 63 - \
           (12*math.floor(6**(1/3)*(n - 1)**(1/3) + 1/18*6**(2/3)/(n - \
           1)**(1/3)) - 12)*math.floor(6**(1/3)*(n - 1)**(1/3) + \
           1/18*6**(2/3)/(n - 1)**(1/3))*(math.floor(6**(1/3)*(n - \
           1)**(1/3) + 1/18*6**(2/3)/(n - 1)**(1/3)) + 1)) + 1/2)
 
-      return b
+      return self.b
 
     #calcs c of the nth pstair (directly by formula)
     def DIRECT_C(self, n):
       if (n==1):
-          c = 2
+          self.c = 2
       elif (n>1):
-          c = n + 1 - 1/6*(math.floor(6**(1/3)*(n - 1)**(1/3) + \
+          self.c = n + 1 - 1/6*(math.floor(6**(1/3)*(n - 1)**(1/3) + \
           1/18*6**(2/3)/(n - 1)**(1/3)) - 1)*math.floor(6**(1/3)*(n - \
           1)**(1/3) + 1/18*6**(2/3)/(n - 1)**(1/3))*(math.floor(6**( \
           1/3)*(n - 1)**(1/3) + 1/18*6**(2/3)/(n - 1)**(1/3)) + 1) - \
@@ -186,24 +186,24 @@ class PenroseStaircase:
           1)**(1/3) + 1/18*6**(2/3)/(n - 1)**(1/3))*(math.floor(\
           6**(1/3)*(n - 1)**(1/3) + 1/18*6**(2/3)/(n - 1)**(1/3)) + 1)) + 1/2)
 
-      return c
+      return self.c
 
     #calcs d of the nth pstair (directly by formula)
     def DIRECT_D(self, n):
-      a=self.DIRECT_A(n)
-      b=self.DIRECT_B(n)
-      c=self.DIRECT_C(n)
-      return a+b-c
+      self.a=self.DIRECT_A(n)
+      self.b=self.DIRECT_B(n)
+      self.c=self.DIRECT_C(n)
+      return self.a+self.b-self.c
 
     #calcs a of the nth pstair (directly by formula)
     def DIRECT_G(self, n):
       if (n==1):
-          g = 6
+          self.g = 6
       elif (n>1):
-          g = 4 + 2*math.floor(6**(1/3)*(n - 1)**(1/3) + \
+          self.g = 4 + 2*math.floor(6**(1/3)*(n - 1)**(1/3) + \
               1/18*6**(2/3)/(n - 1)**(1/3))
 
-      return g
+      return self.g
     
     #calcs len of the nth pstair (directly by formula)
     def DIRECT_L(self, n):
@@ -221,13 +221,14 @@ class PenroseStaircase:
         
     #calculate and print the nth pstair (v1.1)
     def PStair_nth(self, n):
-      a=self.DIRECT_A(n)
-      b=self.DIRECT_B(n)
-      c=self.DIRECT_C(n)
-      d=a+b-c
-      g=self.DIRECT_G(n)
-      l= g / ((a/2)-(b/2)-(c/2)+(d/2))
-      print(n,",",a,",",b,",",int(c),",",int(d),",",g,",",l)
+      self.a=self.DIRECT_A(n)
+      self.b=self.DIRECT_B(n)
+      self.c=int(self.DIRECT_C(n))
+      self.d=self.a+self.b-self.c
+      self.g=int(self.DIRECT_G(n))
+      self.l= int(self.g / ((self.a/2)-(self.b/2)-(self.c/2)+(self.d/2)))
+      #print(n,",",self.a,",",self.b,",",int(self.c),",",int(self.d),\
+      	#",",self.g,",",self.l)
     
     def __init__(self, n):
         self.valid=False
