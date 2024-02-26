@@ -226,7 +226,7 @@ class PenroseStaircase:
       self.c=int(self.DIRECT_C(n))
       self.d=self.a+self.b-self.c
       self.g=int(self.DIRECT_G(n))
-      self.l= int(self.g / ((self.a/2)-(self.b/2)-(self.c/2)+(self.d/2)))
+      self.l= self.g / ((self.a/2)-(self.b/2)-(self.c/2)+(self.d/2))
       #print(n,",",self.a,",",self.b,",",int(self.c),",",int(self.d),\
       	#",",self.g,",",self.l)
     
